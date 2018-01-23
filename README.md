@@ -21,6 +21,7 @@ Run the image in the foreground
 
     docker run -it -p 5555:5555 \
       -e CELERY_BROKER_URL=amqp://guest:guest@<broker_ipaddr>:5672// \
-      helder/celery-flower --broker_api=http://<username>:<password>@<hostname>:15672/api/
+      helder/celery-flower flower --port=5555 \
+      --broker_api=http://<username>:<password>@<hostname>:15672/api/
 
 Flower should be running on http://127.0.0.1:5555.
