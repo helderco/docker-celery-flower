@@ -15,13 +15,12 @@ the RabbitMQ management plugin installed.
 
 Download the docker image
 
-    docker pull iserko/docker-celery-flower
+    docker pull helder/celery-flower
 
 Run the image in the foreground
 
-    docker run -ti -p 5555:5555 \
+    docker run -it -p 5555:5555 \
       -e CELERY_BROKER_URL=amqp://guest:guest@<broker_ipaddr>:5672// \
-      iserko/docker-celery-flower --broker_api=http://<username>:<password>@<hostname>:15672/api/
+      helder/celery-flower --broker_api=http://<username>:<password>@<hostname>:15672/api/
 
-Flower should be running on http://127.0.0.1:5555 (if you're running boot2docker you'll need to use
-boot2docker's IP address instead)
+Flower should be running on http://127.0.0.1:5555.
